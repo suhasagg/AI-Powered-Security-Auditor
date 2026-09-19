@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: {name: security-auditor}
+spec:
+  replicas: 3
+  selector: {matchLabels: {app: security-auditor}}
+  template:
+    metadata: {labels: {app: security-auditor}}
+    spec:
+      containers:
+      - name: api
+        image: security-auditor:latest
+        ports: [{containerPort: 8000}]
+        readinessProbe: {httpGet: {path: /health, port: 8000}}
+        livenessProbe: {httpGet: {path: /health, port: 8000}}
+        resources:
+          requests: {cpu: "250m", memory: "256Mi"}
+          limits: {cpu: "1", memory: "1Gi"}
+---
+apiVersion: v1
+kind: Service
+metadata: {name: security-auditor}
+spec:
+  selector: {app: security-auditor}
+  ports: [{port: 80, targetPort: 8000}]

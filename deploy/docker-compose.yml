@@ -1,0 +1,10 @@
+services:
+  auditor:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+    ports: ["8000:8000"]
+    environment:
+      LLM_MODE: mock
+      ZAP_MODE: mock
+      AUTHORIZED_HOSTS: app.internal.example,localhost
