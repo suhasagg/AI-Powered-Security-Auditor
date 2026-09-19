@@ -1,4 +1,4 @@
-# AI-Powered Security Auditor — Principal+ Reference Architecture
+# AI-Powered Security Auditor — Reference Architecture
 
 > Defensive, authorization-first reference implementation. Scan only systems you own or are explicitly authorized to assess. The included ZAP integration defaults to passive/baseline-style operation and requires an allowlisted target. It is not an exploitation framework.
 
@@ -518,7 +518,7 @@ Be prepared to explain:
 6. Human triage/workflow integrations.
 7. Cell-based regional scale and advanced policy engine.
 
-## Resume framing
+## Portfolio
 
 > Designed and implemented an authorization-first agentic security assurance platform combining OWASP ZAP-style DAST, deterministic source-code security analysis, log anomaly detection, compliance evidence mapping, tenant-isolated RAG and LLM-assisted remediation. Architected strict trust boundaries between probabilistic AI reasoning and privileged security operations, with auditable workflows, scanner isolation, policy enforcement and production observability.
 
